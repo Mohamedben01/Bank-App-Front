@@ -1,3 +1,4 @@
+<button nz-button nzType="primary" class="addBtn" (click)="showModal()">Add Customer</button>
 <nz-table #basicTable [nzData]="customers">
     <thead>
       <tr>
@@ -13,10 +14,20 @@
         <td>{{ data.name }}</td>
         <td>{{ data.email }}</td>
         <td>
-          <a>Edit</a>
+          <span nz-icon nzType="edit" nzTheme="outline" class="icon" (click)="editCustomer()"></span>
           <nz-divider nzType="vertical"></nz-divider>
-          <a>Delete</a>
+          <span nz-icon nzType="delete" nzTheme="outline" class="icon" (click)="deleteCustomer(data.id)"></span>
         </td>
       </tr>
     </tbody>
   </nz-table>
+  <nz-modal [(nzVisible)]="isVisible" nzTitle="Customer Form" (nzOnCancel)="showModal()">
+    <ng-container *nzModalContent>
+      <app-add-customer [isSubmitForm]="isSaved" (resp)="handle($event)"></app-add-customer>
+    </ng-container>
+    <div *nzModalFooter>
+      <button nz-button nzType="default" (click)="showModal()">Cancel</button>
+      <button nz-button nzType="primary" (click)="saveCustomer()">Save</button>
+    </div>
+  </nz-modal>
+  

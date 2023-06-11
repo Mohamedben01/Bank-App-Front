@@ -1,1 +1,19 @@
-<p>add-customer works!</p>
+<form nz-form [formGroup]="customerForm">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Username</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="name" placeholder="username"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="email" placeholder="email" type="email"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <!-- <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button nzType="primary">Submit</button>
+      </nz-form-control> -->
+    </nz-form-item>
+  </form>

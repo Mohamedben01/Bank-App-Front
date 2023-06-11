@@ -1,15 +1,10 @@
-<!-- <button type="button" routerLink="/customers">Customers</button>
-<button type="button" routerLink="/bank-account">Bank Account</button>
-<router-outlet></router-outlet> -->
 <nz-layout>
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
       <div class="logo">Bank Application</div>
       <ul nz-menu nzTheme="dark" nzMode="inline">
-        <li nz-submenu nzTitle="User" nzIcon="user">
-          <ul>
-            <li nz-menu-item routerLink="/customers">All Customers</li>
-            <li nz-menu-item>Add Customer</li>
-          </ul>
+        <li nz-menu-item>
+            <span nz-icon nzType="user" nzTheme="outline"></span>
+            <span routerLink="/customers">Customers</span>
         </li>
         <li nz-menu-item>
           <span nz-icon nzType="bank" nzTheme="outline"></span>

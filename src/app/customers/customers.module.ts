@@ -4,6 +4,7 @@ import { CustomersComponent } from './component/customers/customers.component';
 import { NgZorroModule } from '../shared/ng-zorro/ng-zorro.module';
 import { CommonModule } from '@angular/common';
 import { AddCustomerComponent } from './component/add-customer/add-customer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { AddCustomerComponent } from './component/add-customer/add-customer.comp
   imports: [
     CustomerRoutingModule,
     NgZorroModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class CustomersModule { }

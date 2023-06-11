@@ -18,4 +18,11 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.baseUrl+'customers');
   }
 
+  saveCustomer(customer: any){
+    return this.http.post(this.baseUrl+'customers',customer);
+  }
+  deleteCustomer(customerId: number){
+    return this.http.delete(this.baseUrl+'customers/'+customerId);
+  }
+  editCustomer(){}
 }

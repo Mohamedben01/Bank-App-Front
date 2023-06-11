@@ -5,6 +5,10 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 import {
   MenuFoldOutline,
   MenuUnfoldOutline
@@ -23,6 +27,10 @@ const icons: IconDefinition[] = [MenuFoldOutline, MenuUnfoldOutline];
     NzMenuModule,
     NzTableModule,
     NzDividerModule,
+    NzButtonModule,
+    NzModalModule,
+    NzFormModule,
+    NzMessageModule,
     NzIconModule.forChild(icons)
   ],
   exports : [
@@ -31,6 +39,10 @@ const icons: IconDefinition[] = [MenuFoldOutline, MenuUnfoldOutline];
     NzMenuModule,
     NzIconModule,
     NzTableModule,
+    NzButtonModule,
+    NzModalModule,
+    NzFormModule,
+    NzMessageModule,
     NzDividerModule
   ]
 })
