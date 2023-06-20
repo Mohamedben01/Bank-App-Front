@@ -10,6 +10,10 @@
           <span nz-icon nzType="bank" nzTheme="outline"></span>
           <span routerLink="/bank-account">Accounts</span>
         </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="logout" nzTheme="outline"></span>
+          <span (click)="logout()">Logout</span>
+        </li>
       </ul>
     </nz-sider>
     <nz-layout>

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  KC_HTTP_RELATIVE_PATH: '/auth',
   baseUrl: 'http://localhost:9090/'
 };
 

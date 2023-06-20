@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { KeycloakService } from 'keycloak-angular';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isCollapsed = false;
+
+  constructor(private keycloak: KeycloakService) {}
+  
+  logout(){
+    this.keycloak.logout();
+  }
 }

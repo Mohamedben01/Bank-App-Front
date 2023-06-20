@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Customer } from '../../models/Customer';
 import { CustomerService } from '../../service/customer.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
-
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
@@ -55,4 +54,5 @@ export class CustomersComponent implements OnInit {
       this.allCustomers()
     })
   }
+ 
 }
