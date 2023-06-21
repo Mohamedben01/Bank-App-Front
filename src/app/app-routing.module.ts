@@ -6,12 +6,14 @@ const routes : Routes = [
   { 
     path: 'customers', 
     loadChildren: () => import('./customers/customers.module').then((m) => m.CustomersModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data : {'roles':['admin']}
   },
   { 
     path: 'bank-account', 
     loadChildren: () => import('./bank-account/bank-account.module').then((m) => m.BankAccountModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data : {'roles':['admin']}
   },
   { 
     path: '', 

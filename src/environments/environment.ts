@@ -4,8 +4,12 @@
 
 export const environment = {
   production: false,
-  KC_HTTP_RELATIVE_PATH: '/auth',
-  baseUrl: 'http://localhost:9090/'
+  baseUrl: 'http://localhost:9090/',
+  keycloak : {
+    url: 'http://localhost:8180/auth',
+    realm: 'Bank',
+    clientId: 'bank-front'
+  }
 };
 
 /*
