@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -14,11 +14,15 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroModule } from './shared/ng-zorro/ng-zorro.module';
 import { AppInterceptorInterceptor } from './core/interceptor/app-interceptor.interceptor';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializeKeycloak } from './init/initializeKeycloak';
+import { AccessControlDirective } from './shared/directives/access-control.directive';
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccessControlDirective
   ],
   imports: [
     BrowserModule,
@@ -31,13 +35,20 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroModule,
+    KeycloakAngularModule
   ],
   exports: [
     NgZorroModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
-    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorInterceptor, multi: true },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    }
   ],
   bootstrap: [AppComponent]
 })

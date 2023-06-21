@@ -1,14 +1,18 @@
 <nz-layout>
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-      <div class="logo">Bank Application</div>
+      <div class="logo">{{userName}}</div>
       <ul nz-menu nzTheme="dark" nzMode="inline">
-        <li nz-menu-item>
+        <li *accessControl="['admin', 'manager']" nz-menu-item>
             <span nz-icon nzType="user" nzTheme="outline"></span>
             <span routerLink="/customers">Customers</span>
         </li>
-        <li nz-menu-item>
+        <li *accessControl="['admin']" nz-menu-item>
           <span nz-icon nzType="bank" nzTheme="outline"></span>
           <span routerLink="/bank-account">Accounts</span>
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="logout" nzTheme="outline"></span>
+          <span (click)="logout()">Logout</span>
         </li>
       </ul>
     </nz-sider>
