@@ -16,11 +16,13 @@ import { NgZorroModule } from './shared/ng-zorro/ng-zorro.module';
 import { AppInterceptorInterceptor } from './core/interceptor/app-interceptor.interceptor';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializeKeycloak } from './init/initializeKeycloak';
+import { AccessControlDirective } from './shared/directives/access-control.directive';
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccessControlDirective
   ],
   imports: [
     BrowserModule,

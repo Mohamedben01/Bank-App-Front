@@ -18,7 +18,6 @@ export class AppInterceptorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     console.log('Request Http Interceptor ...');
 
-    console.log('isTokenExpired :>> ', this.authService.isTokenExpired());
     this.authService.getAccessToken();
     const authToken = localStorage.getItem('token');
 
@@ -26,7 +25,7 @@ export class AppInterceptorInterceptor implements HttpInterceptor {
       'Content-Type':'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTION',
-      'Authorization' : `Bearer ${authToken}` 
+      'Authorization' : `Bearer ${authToken}`
     });
     
     //clone request and change header

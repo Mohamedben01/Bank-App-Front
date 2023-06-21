@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 import { KeycloakProfile } from 'keycloak-js';
-import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -38,6 +37,10 @@ export class AuthService {
 
   isTokenExpired(): boolean{
     return this.kcService.isTokenExpired();
+  }
+
+  getRoles(): string[]{
+    return this.kcService.getUserRoles();
   }
 
   login(){

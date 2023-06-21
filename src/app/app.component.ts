@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './core/auth/auth.service';
-import { User } from './shared/ng-zorro/models/user';
+import { User } from './shared/models/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
