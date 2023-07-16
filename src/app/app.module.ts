@@ -14,11 +14,17 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroModule } from './shared/ng-zorro/ng-zorro.module';
 import { AppInterceptorInterceptor } from './core/interceptor/app-interceptor.interceptor';
+import { LoginComponent } from './core/login/login.component';
+import { NotAuthorizedComponent } from './shared/components/not-authorized/not-authorized.component';
+import { AccessRoleDirective } from './shared/directives/access-role.directive';
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    AccessRoleDirective,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,
